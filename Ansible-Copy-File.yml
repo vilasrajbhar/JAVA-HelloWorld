@@ -1,0 +1,7 @@
+---
+- hosts: vilasraj@175.25.2.5
+  tasks:
+    - name: copy all files from folder to remote host
+      copy:
+        src: /var/lib/jenkins/workspace/Docker-Ansible-Project/webapp/target/webapp.war
+        dest: /opt/docker/webapp.war
