@@ -1,7 +1,5 @@
 ---
 - hosts: vilasraj@175.25.2.5
-  become: true
-  become_user: root
   tasks:
     - name: copy all files from folder to remote host
       copy:
