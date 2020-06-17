@@ -5,3 +5,6 @@
       copy:
         src: /var/lib/jenkins/workspace/Docker-Ansible-Project/webapp/target/webapp.war
         dest: /opt/docker/webapp.war
+      copy:
+        src: /var/lib/jenkins/workspace/Docker-Ansible-Project/Dockerfile
+        dest: /opt/docker/Dockerfile
