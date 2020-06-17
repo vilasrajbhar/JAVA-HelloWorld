@@ -1,10 +1,9 @@
 ---
 - hosts: vilasraj@175.25.2.5
   tasks:
-    - name: copy all files from folder to remote host
+    - name: copy all files to docker folder
       copy:
-        src: /var/lib/jenkins/workspace/Docker-Ansible-Project/webapp/target/webapp.war
-        dest: /opt/docker/webapp.war
-      copy:
-        src: /var/lib/jenkins/workspace/Docker-Ansible-Project/Dockerfile
-        dest: /opt/docker/Dockerfile
+      	src={{ item.src }} dest={{ item.dest }}
+      	with_items:
+      	 - { src: '/var/lib/jenkins/workspace/Docker-Ansible-Project/webapp/target/webapp.war', dest: '/opt/docker' }
+      	 - { src: '/var/lib/jenkins/workspace/Docker-Ansible-Project/Dockerfile', dest: '/opt/docker' }
