@@ -1,5 +1,11 @@
 ---
  - hosts: vilasraj@175.25.2.5
    tasks:
+    - name: stop previous version docker
+      shell: docker stop docker_demo
+    - name: remove stopped container
+      shell: docker rm -f docker_demo	  
+    - name: remove docker_demo images
+      shell: docker image rm -f vilasraj/docker_demo
     - name: create docker image
       shell: docker run -d --name docker_demo -p 7000:8080 vilasraj/docker_demo
