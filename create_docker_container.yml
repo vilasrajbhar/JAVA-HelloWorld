@@ -1,6 +1,5 @@
 ---
  - hosts: vilasraj@175.25.2.5
-   become: true
    tasks:
     - name: stop previous version docker
       shell: docker stop docker_demo
