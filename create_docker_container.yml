@@ -6,6 +6,6 @@
     - name: remove stopped container
       shell: docker rm -f docker_demo	  
     - name: remove docker_demo images
-      shell: docker image rmi vilasraj/Docker-Ansible-Project:latest
+      shell: docker image rmi vilasraj/jenkins-docker-ansible-project:latest
     - name: create docker image
-      shell: docker run -d --name docker_demo -p 7000:8080 vilasraj/Docker-Ansible-Project:latest
+      shell: docker run -d --name docker_demo -p 7000:8080 vilasraj/jenkins-docker-ansible-project:latest

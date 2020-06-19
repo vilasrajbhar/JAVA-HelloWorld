@@ -3,9 +3,9 @@
   tasks:
     - name: copy war file
       copy:
-        src: /var/lib/jenkins/workspace/Docker-Ansible-Project/webapp/target/webapp.war
+        src: /var/lib/jenkins/workspace/jenkins-docker-ansible-project/webapp/target/webapp.war
         dest: /opt/docker/webapp.war
     - name: copy docker file
       copy:
-        src: /var/lib/jenkins/workspace/Docker-Ansible-Project/Dockerfile
+        src: /var/lib/jenkins/workspace/jenkins-docker-ansible-project/Dockerfile
         dest: /opt/docker/Dockerfile
