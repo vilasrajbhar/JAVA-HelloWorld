@@ -1,7 +1,11 @@
 ---
  - hosts: vilasraj@175.25.2.5
    tasks:
+    - name: stop previous version docker
+      shell: docker stop jenkins-docker-ansible-project
+    - name: remove stopped container
+      shell: docker rm -f jenkins-docker-ansible-project  
     - name: remove jenkins-docker-ansible-project images
       shell: docker image rmi vilasraj/jenkins-docker-ansible-project:latest
-    - name: create docker container
+    - name: create docker image
       shell: docker run -d --name jenkins-docker-ansible-project -p 7000:8080 vilasraj/jenkins-docker-ansible-project:latest
