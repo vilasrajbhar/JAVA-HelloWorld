@@ -1,11 +1,7 @@
 ---
  - hosts: vilasraj@175.25.2.5
    tasks:
-    - name: stop previous version docker
-      shell: docker stop docker_demo
-    - name: remove stopped container
-      shell: docker rm -f docker_demo	  
-    - name: remove docker_demo images
+    - name: remove jenkins-docker-ansible-project images
       shell: docker image rmi vilasraj/jenkins-docker-ansible-project:latest
-    - name: create docker image
-      shell: docker run -d --name docker_demo -p 7000:8080 vilasraj/jenkins-docker-ansible-project:latest
+    - name: create docker container
+      shell: docker run -d --name jenkins-docker-ansible-project -p 7000:8080 vilasraj/jenkins-docker-ansible-project:latest
